@@ -29,7 +29,7 @@ const App = () => {
     }
 
     const result = currPos;
-    swal('근삿값 찾았어요!', `${i}번 시행했을 때 ${number}의 양의 제곱근의 근삿값은 '${result}'입니다!`);
+    swal('근삿값을 찾았어요!', `${i}번 시행했을 때 ${number}의 양의 제곱근의 근삿값은 '${result}'입니다!`);
   }
 
   return (
