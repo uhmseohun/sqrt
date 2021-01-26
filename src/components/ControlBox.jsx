@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import swal from 'sweetalert';
 
 const absoluteStyle = {
   position: 'absolute',
@@ -56,7 +57,10 @@ const ControlBox = ({ onButtonClick: handleButtonClick, onScaleChanged }) => {
         { !clicked ? (
           <Button onClick={() => {
             if (!speed || !diffMax) {
-              return alert('모든 입력 칸을 채워 주세요');
+              return swal('이런!', '모든 입력칸을 채워 주세요.', 'error');
+            }
+            if (parseFloat(number) <= 0) {
+              return swal('이런!', '양의 실수의 제곱근만 계산할 수 있어요.', 'error');
             }
             handleButtonClick({
               number: parseFloat(number),
